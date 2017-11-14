@@ -5,6 +5,7 @@ class OneAway {
     System.out.println(oneAway("pales", "pale"));
     System.out.println(oneAway("pale", "bale"));
     System.out.println(oneAway("pale", "bake"));
+    System.out.println(oneAway("ale", "abe"));
   }
   public static boolean oneAway(String s, String t){
     if(s == t){
