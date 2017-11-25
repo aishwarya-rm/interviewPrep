@@ -1,0 +1,25 @@
+A heap is a great way of ordering elements and implementing a Priority Queue
+A Priority Queue has a couple of methods that are important: insert(), findMin(), delete()
+
+
+Heap:
+- A heap is structured in a way such that the top element is the smallest number
+- In the case of the max heap, the top element is the largest number
+- Every number below this node is greater (opposite for a max heap)
+
+
+Insert:
+- Insert at the next open spot in the heap (it's in the last row on the right)
+- Then, you have to percolate up, which is when you reset the order of the Heap
+- Percolate up:
+  - while this node is greater than the parent node, switch this node with the parent node
+
+FindMin:
+- Just get the top element from a heap.
+
+Delete:
+- Usually done right after findMin, delete the element at the top
+- replace it with the last element in the Heap
+- then percolate down
+  - while the current element is greater than either child
+  - switch the current element with the smaller child
