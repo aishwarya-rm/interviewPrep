@@ -1,7 +1,7 @@
 import java.util.*;
 class sortedMerge{
   public static void main(String[] args){
-    int[] A = new int[]{0};
+    int[] A = new int[]{0, 0, 0, 0, 0, 0};
     int[] B = new int[]{1, 2, 3, 4, 5};
     int[] ret = sortedMerge(A, B);
     for(int i = 0; i < ret.length; i++){
