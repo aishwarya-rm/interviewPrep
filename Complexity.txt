@@ -1,0 +1,5 @@
+Algorithm complexity is best measured in terms of big O and big Omega
+
+Big O is an upper bound on the time complexity of the Algorithm
+Big Omega is a lower bound (a tight bound)
+Big Theta is the average bound 
