@@ -23,3 +23,14 @@ Delete:
 - then percolate down
   - while the current element is greater than either child
   - switch the current element with the smaller child
+
+How to build a heap:
+- There are two ways to build a heap. If we implement this buildHeap method without knowing the internals of the data structure, we can
+do it in O(nlog(n)) time. This would be just by doing n insert operations.
+- There is also another method, Floyd's buildHeap. This works by inserting all the elements into the heap and only doing percolateDown at
+the very end. This would take amortized O(n) time.
+
+With the array implementation of a Heap, we can access parent and children nodes as follows:
+- Parent = (n-1) /2
+- Left Child = 2n + 1
+- Right Child = 2n + 2
