@@ -1,0 +1,7 @@
+A binary search tree is a data structure such that an in order traversal would
+result in a sorted list.
+
+A binary search tree will have O(log n) finds, and O(log n) inserts, but delete can
+be a tougher problem. It would be kind of messy to have many deletes in a binary tree,
+so a better way of doing them is to just mark nodes as deleted and then even though
+insert and delete would be slightly worse, it's not too bad. 
