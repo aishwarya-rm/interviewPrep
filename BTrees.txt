@@ -1,0 +1,43 @@
+B Trees are a new type of dictionary whos purpose it is to minimize disk access.
+In an AVL Tree, if the tree has a very large height, it can often lead to a really
+long time b/c of disk access even though Big Oh notation deems that it's O(log n).
+
+B-Trees minimize disk access by storing all the data in a list at a node. Then you
+can use binary search to minimize the amount of times you have to access things on
+the disk.
+
+Each B-Tree has two properties: M and L. M is the number of splits per leaf, and L is
+the number of data points at a leaf node.
+
+Structure:
+A B tree is a M-ary tree where only the leaves have actual data. The intermediate
+nodes have pointers to the correct leaf. Any thing less than the pointer value is to the
+left and anything greater than or equal to is on the right. Each internal node
+can have many pointers, it has M-1 pointers. No internal node or leaf node can be filled
+less than L/2 of the way, so we must rebalance if necessary.
+
+Balance:
+No node can be filled less than L/2 of the way. Adopt from neighbors recursively
+if necessary.
+
+Navigation:
+The range of numbers in the tree is represented through M-1 pointers at each node.
+
+
+Insert:
+- Find the correct leaf node.
+- Insert the node in the leaf
+- Split leaf
+- Recursively split parents up until root
+- O(L + Mlog_M(N))
+- Rarely will have to recursively adopt/rebalance so this is good
+
+Delete:
+- Roughly the same as Insert, but you delete
+- O(L + Mlog_M(N))
+- Again, merges are rare so this is still good
+
+You choose M and L to be the best based on the page size from Disk. There's a formula for this.
+
+This is a good way to prevent accessing disk too many times because the entire node is
+brought in from the disk (prevents multiple accesses). 
