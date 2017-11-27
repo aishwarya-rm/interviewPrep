@@ -40,4 +40,5 @@ Delete:
 You choose M and L to be the best based on the page size from Disk. There's a formula for this.
 
 This is a good way to prevent accessing disk too many times because the entire node is
-brought in from the disk (prevents multiple accesses). 
+brought in from the disk (prevents multiple accesses). Trees are really elegant ways to store
+a dictionary with logarithmic inserts + deletes. 
