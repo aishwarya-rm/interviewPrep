@@ -1,0 +1,12 @@
+Dictionaries and Sets are essentially the same ADT that has the following methods:
+insert
+Find
+delete
+
+These are really good, because we want to access elements quickly and we won't often access
+many of the elements. For example, an array is useful because it has O(1) lookup at a particular index.
+But often times we never use that. Let's instead use a Dictionary or a Set, so that lookup
+of a particular element is pretty quick.
+
+A dictionary maps a key to a value. A set can also hold "Items" which can just contain a key and value.
+That's why they're the same ADT.
