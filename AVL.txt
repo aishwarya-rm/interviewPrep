@@ -1,0 +1,31 @@
+An AVL tree is a modified BST. All AVL Trees are BSTs, all BSTs are not necessarily
+AVL trees. An AVL has the following properties:
+
+Structural:
+- every node can have 0, 1 or 2 children.
+
+Alignment:
+- it has to have the BST property where the left child is less than the current
+and the right child is greater
+
+Balance:
+- the balance must be less than or equal to 1, where balance is the height of the left
+tree - the height of the right tree for every single node.
+
+
+There are three methods to consider:
+- insert : O(log n)
+- find : O(log n)
+- delete : O(logn) or O(1) with lazy deletion
+- rebalancing: O(1)
+
+Insert is find + rebalance (where you ensure that the balance is the same)
+Find is just like find in a BST
+
+Delete is find + rebalance. or you could just do lazy deletion, and have it be O(1)
+
+Rebalancing:
+- there are four ways to rebalance (you just have to memorize these)
+- you can have a single rotation or a double rotation based on the case.
+
+The worst case for build tree would be O(nlogn)
