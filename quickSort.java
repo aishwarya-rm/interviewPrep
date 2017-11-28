@@ -7,41 +7,39 @@ class quickSort{
       System.out.print(arr[i]);
     }
   }
-  public static void recursiveQuickSort(int[] arr, int start, int end){
-    int idx = helper(arr, start, end);
-    if(start < idx - 1){
-      recursiveQuickSort(arr, start, idx - 1);
+  public static void quickSort(int[] arr, int low, int high){
+    if(low >= high){
+      return;
     }
-    if(end > idx){
-      recursiveQuickSort(arr, idx, end);
-    }
+    int middle = partition(arr, low, high);
+    partition(arr, low, middle - 1);
+    partition(arr, middle + 1, high);
   }
-  public static int helper(int[] arr, int low, int high){
-    //It's one element, it's sorted
-    int l = low;
-    int h = high;
-    int m = (l + h)/2;
-    //sort everything such that the elements lower than the middle element are on the left and the elements greater are on the right
-    while(l <= h){
-        while(arr[l] <= arr[m]){
-          l++;
+  public static int partition(int[] a, int low, int hi){
+    int pivot = hi;
+    int i =low;
+    int j = hi;
+    while(i<j)
+    {
+        if(a[i]<=a[pivot])
+        {
+            i++;
         }
-        while(arr[h] >= arr[m]){
-          h--;
+        if(a[i]>a[pivot])
+        {
+          if((a[i]>a[pivot]) && (a[j]<=a[pivot]))
+          {
+              int temp= a[i];
+              a[i]=a[j];
+              a[j]=temp;
+              i++;
+          }
+          if(a[j]>a[pivot])
+          {
+              j--;
+          }
         }
-        if(l <= h){
-          System.out.println(l);
-          int temp = arr[l];
-          arr[l] = arr[h];
-          arr[h] = temp;
-          l++;
-          h--;
-        }
-        for(int i = 0; i < arr.length; i++){
-          System.out.print(arr[i]);
-        }
-        System.out.println(" ");
     }
-    return l;
+    return i;
   }
 }
