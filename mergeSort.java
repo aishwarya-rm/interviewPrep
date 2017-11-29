@@ -1,21 +1,31 @@
 import java.util.*;
 class mergeSort{
   public static void main(String[] args){
-    int[] ret = new int[]{1, 4, 3, 2, 5};
-    mergeSort(ret, 0, ret.length - 1);
+    int[] ret = new int[]{1, 4, 3, 2, 6};
+    mergeSort(ret);
     for(int i = 0; i < ret.length; i++){
       System.out.print(i);
     }
     System.out.println(" ");
   }
-  public static void mergeSort(int[] arr, int low, int high){
+  public static void mergeSort(int[] arr){
       //it's already sorted
       if(arr.length > 1){
-        int mid = (low + high) / 2;
-        int[] left = Arrays.copyOfRange(arr, low, mid);
-        mergeSort(left, 0, mid);
-        int[] right = Arrays.copyOfRange(arr, mid, high);
-        mergeSort(right, mid, high);
+        int mid = arr.length / 2;
+        int[] left = new int[mid];
+        System.arraycopy(arr, 0, left, 0, mid);
+        for(int i = 0; i < left.length; i++){
+          System.out.print(left[i]);
+        }
+        System.out.println(" ");
+        mergeSort(left);
+        int[] right = new int[arr.length - mid];
+        System.arraycopy(arr, mid, right, 0, arr.length - mid);
+        for(int i = 0; i < right.length; i++){
+          System.out.print(right[i]);
+        }
+        System.out.println(" ");
+        mergeSort(right);
         merge(left, right);
       }
   }
@@ -24,30 +34,34 @@ class mergeSort{
     int indexOne = 0;
     int indexTwo = 0;
     int curr = 0;
-    while(indexOne <= (arr.length - 1) && indexTwo <= (arr2.length -1)){
-      if(arr[indexOne] > arr2[indexTwo]){
+    while(curr < ret.length){
+      if(indexOne < arr.length && indexTwo < arr2.length){
+        int elt1 = arr[indexOne];
+        int elt2 = arr2[indexTwo];
+        if(elt1 > elt2){
+          System.out.print(elt1);
+          ret[curr] = elt1;
+          indexOne += 1;
+        }
+        else{
+          System.out.print(elt2);
+          ret[curr] = elt2;
+          indexTwo += 1;
+        }
+        curr++;
+      }
+      if(indexOne < arr.length){
+        System.out.print(arr[indexOne]);
         ret[curr] = arr[indexOne];
-        indexOne += 1;
-        curr += 1;
+        indexOne++;
       }
-      else{
+      if(indexTwo < arr2.length){
+        System.out.print(arr2[indexTwo]);
         ret[curr] = arr2[indexTwo];
-        indexTwo += 1;
-        curr += 1;
+        indexTwo++;
       }
-    }
-    if(indexOne < (arr.length - 1)){
-      //put the rest of whatever in the end
-      for(int i = indexOne; i < ret.length; i++){
-        ret[curr] = arr[indexOne];
-        curr += 1;
-      }
-    }
-    else if(indexTwo < (arr2.length - 1)){
-      for(int i = indexTwo; i < ret.length; i++){
-        ret[curr] = arr2[indexTwo];
-        curr += 1;
-      }
+      curr++;
+
     }
     return ret;
   }
