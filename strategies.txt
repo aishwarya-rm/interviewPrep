@@ -1,0 +1,93 @@
+General Tips:
+- Always validate inputs
+- Communicate the pros and cons of a data structure
+
+Sequence:
+- Sliding window technique
+- Sequence out of bounds issues
+- Traversing from right to left
+- Edge cases: empty sequence, sequence with 1 or 2 elements, repeated elements
+
+Array:
+- Is it sorted? Binary Search
+- Practice questions
+
+Binary:
+- Convert number from decimal to binary
+- Corner cases: overflow/underflow, negative numbers
+
+Dynamic programming:
+- Lots of practice
+
+Geometry:
+- Find whether two circle overlap, check that the distance between the two centers is less than sum of radii
+
+Graph:
+- Graph representation: adjacency matrix, adjacency list, hashmap of hashmaps
+- search algorithms: BFS, DFS, topological sort, Dijkstra's, Bellman-Ford, Floyd-Warshall, Prim, Kruskal
+- DFS with a 2-D array
+- Lots of practice
+
+Interval:
+- an array of two element arrays
+- [[1, 2], [4, 7]]
+- Overlapping intervals
+- Corner cases: single interval, non-overlapping intervals
+
+LinkedList:
+- Dummy node so that operations don't need to be on head or tail
+- Getting the kth from last node: two pointers, one is k ahead of the other. When the node ahead reaches the end, the other is k nodes behind
+- Getting middle node: two pointers, one increments twice as much as the other. When faster reaches end of list, the slower will be at middle. 
+- Count number of nodes in a linkedlist, reverse a linkedlist, find the middle node, merge two lists
+
+Math:
+- Common formulas:
+	- Sum of 1 to N = (n+1) * n/2
+	- Sum of GP = 2^0 + 2^ 1 + 2^2 + ... + 2^n = 2^(n+1)-1
+	- Permutations of N = N! /(N-K)!
+	- Combinations of N = N!/(K! *(N-K)!)
+
+Matrix:
+- It's a 2-D Array
+- Many games are matrices
+
+Recursion:
+- Default limit in Python for a stack is 1000
+- It's never O(1) unless there's Tail Call Optimization
+
+String:
+- Compare strings, use a hashmap
+- Trie/Prefix Tree, Suffix Tree can be used for looking up strings efficiently
+- Rabin Karp: efficient searches of substrings
+- KMP : efficient searches of substrings
+- Anagram:
+	- Frequency counting of characters
+- Palindrome:
+	- reverse string, it should be equal of self
+	- Have two pointers at the start and end of the string, move pointers until they meet. 
+	- HashMaps are usually not helpful b/c order matters
+
+Tree:
+- Undirected and connected acyclic graph
+- Recursion is common - check for base case
+- Traverse a tree by level use Depth first search
+- Pre-order/In-order/Post-order iteratively
+- Binary Tree: - pre-order or post-order also needed in addition to in-order to serialize tree
+- BST: properties
+
+Tries:
+- Conducting searches and providing autocomplete
+- Implement a Trie
+
+Heap:
+- Top/Lowest K it's usually a heap question
+- Top k elements, use a min heap of size k, push all the elements onto the heap, whenever the heap size exceeds k, remove minimum element
+
+
+Recap the process:
+1. Decide on programming language
+2. Study CS fundamentals
+3. Practice solving algorithms
+4. Internalize the Do's and Don'ts
+5. Practice doing mock interviews
+6. Interview successfully to get the job
